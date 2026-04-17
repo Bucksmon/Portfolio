@@ -1,15 +1,217 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Webpage</title>
-    <link rel="stylesheet" href="index.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bucksmon | Portfolio</title>
+
+<style>
+body {
+  margin: 0;
+  background: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* GLOBAL */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0,255,204,0.35);
+  border-color: #00ffcc;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeUp 0.8s ease;
+}
+
+.hero h1 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #00ffcc;
+}
+
+.hero p {
+  opacity: 0.8;
+}
+
+/* PROFILE */
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* TECH */
+.tech {
+  padding: 8px 14px;
+  border: 1px solid #00ffcc;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px;
+  transition: all 0.25s ease;
+}
+
+.tech:hover {
+  background: #00ffcc;
+  color: black;
+  transform: scale(1.05);
+}
+
+.tech img {
+  background: #000;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid #00ffcc;
+  border-radius: 6px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #00ffcc;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #00ffcc;
+  color: black;
+}
+
+/* SECTION */
+.section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.section h2 {
+  color: #00ffcc;
+}
+
+/* CONTACT */
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contact div {
+  padding: 12px 20px;
+  border: 1px solid #00ffcc;
+  border-radius: 8px;
+}
+</style>
 </head>
+
 <body>
-    <h1>Welcome to My Webpage</h1>
-    <p>This is a simple webpage using HTML and CSS.</p>
-    <button onclick="alert('Hello, World!')">Click Me</button>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <h1>🎮 LOS DEV SANTOS</h1>
+  <p>Full Stack Developer building scalable real-world systems</p>
+  <a href="#projects" class="btn">View Projects</a>
+</div>
+
+<!-- PROFILE -->
+<div class="profile">
+
+<div style="max-width:400px;">
+  <img src="https://live.staticflickr.com/65535/55204799843_97f1c3c015_b.jpg"
+       style="width:100%; border-radius:12px;">
+</div>
+
+<div class="card" style="
+  max-width:400px;
+  border:2px solid #00ffcc;
+  border-radius:12px;
+  padding:20px;
+">
+
+<h3 style="color:#00ffcc;">🧾 PLAYER PROFILE</h3>
+
+<p><b>Class:</b> Full Stack Developer</p>
+<p><b>Status:</b> <span style="color:#00ff00;">Online ●</span></p>
+
+<ul>
+  <li>Efficient</li>
+  <li>Calculated</li>
+  <li>Unpredictable 😏</li>
+</ul>
+
+<p style="opacity:0.7;">
+Building scalable real-world systems
+</p>
+
+</div>
+
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="section">
+  <h2>🚀 PROJECTS</h2>
+
+  <div>
+    <a href="#" class="tech">🛒 Self Checkout App</a>
+    <a href="#" class="tech">🤖 Discord Bot</a>
+  </div>
+</div>
+
+<!-- STACK -->
+<div class="section">
+  <h2>⚙️ TECH STACK</h2>
+
+  <div>
+    <span class="tech"><img src="https://cdn.simpleicons.org/javascript/white" width="16">JS</span>
+    <span class="tech"><img src="https://cdn.simpleicons.org/html5/white" width="16">HTML</span>
+    <span class="tech"><img src="https://cdn.simpleicons.org/css/white" width="16">CSS</span>
+    <span class="tech"><img src="https://cdn.simpleicons.org/nodedotjs/white" width="16">Node</span>
+    <span class="tech"><img src="https://cdn.simpleicons.org/mongodb/white" width="16">MongoDB</span>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <h2>👤 CONTACT</h2>
+
+  <div class="contact">
+    <div>📧 your@email.com</div>
+    <div>💬 Angel_Nunez4</div>
+  </div>
+
+  <a href="#" class="btn">Visit Website</a>
+</div>
+
+</div>
+
 </body>
 </html>
