@@ -36,10 +36,15 @@ body {
   border-color: #00ffcc;
 }
 
+.available:hover {
+  background: #00ffcc;
+  color: black;
+}
+
 /* HERO */
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
   animation: fadeUp 0.8s ease;
 }
 
@@ -63,6 +68,13 @@ body {
   margin-top: 40px;
 }
 
+/* IMAGE WRAPPER FIX */
+.profile-img {
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+
 /* TECH */
 .tech {
   padding: 8px 14px;
@@ -79,6 +91,7 @@ body {
   background: #00ffcc;
   color: black;
   transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffcc;
 }
 
 .tech img {
@@ -123,10 +136,29 @@ body {
   margin-top: 20px;
 }
 
-.contact div {
+.contact .card {
   padding: 12px 20px;
   border: 1px solid #00ffcc;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .tech {
+    margin: 6px;
+    padding: 6px 10px;
+  }
+
+  .card {
+    width: 100%;
+  }
 }
 </style>
 </head>
@@ -135,8 +167,9 @@ body {
 
 <div class="container">
 
-<!-- HERO -->
+<!-- WARNING -->
 <div class="hero">
+  <h2>⚠️ WARNING: WORK IN PROGRESS ⚠️</h2>
   <h1>🎮 LOS DEV SANTOS</h1>
   <p>Full Stack Developer building scalable real-world systems</p>
   <a href="#projects" class="btn">View Projects</a>
@@ -145,14 +178,16 @@ body {
 <!-- PROFILE -->
 <div class="profile">
 
-<div style="max-width:400px;">
+<!-- IMAGE -->
+<div class="profile-img">
   <img src="https://live.staticflickr.com/65535/55204799843_97f1c3c015_b.jpg"
-       style="width:100%; border-radius:12px;">
+       style="width:100%; border-radius:12px; display:block;">
+
   <div class="card" style="
     position:absolute;
-    bottom:30px;
-    left:16.5px;
-    padding:8px 110px;
+    bottom:20px;
+    left:20px;
+    padding:8px 20px;
     font-weight:bold;
     letter-spacing:2px;
     color:#00ffcc;
@@ -160,14 +195,15 @@ body {
     border:2px solid #00ffcc;
     border-radius:6px;
     box-shadow: 0 0 12px rgba(0,255,204,0.5);
-    transition: all 0.3s ease;
-  " >
+  ">
     BUCKSMON
   </div>
 </div>
 
+<!-- PROFILE CARD -->
 <div class="card" style="
   max-width:400px;
+  background:rgba(0,0,0,0.85);
   border:2px solid #00ffcc;
   border-radius:12px;
   padding:20px;
@@ -176,6 +212,7 @@ body {
 <h3 style="color:#00ffcc;">🧾 PLAYER PROFILE</h3>
 
 <p><b>Class:</b> Full Stack Developer</p>
+<p><b>Reputation:</b> Rising</p>
 <p><b>Status:</b> <span style="color:#00ff00;">Online ●</span></p>
 
 <ul>
@@ -185,6 +222,7 @@ body {
 </ul>
 
 <p style="opacity:0.7;">
+<b>Current Mission:</b><br>
 Building scalable real-world systems
 </p>
 
@@ -197,24 +235,21 @@ Building scalable real-world systems
   <h2>🚀 PROJECTS</h2>
 
   <div>
-    <a href="#" class="tech">🛒 Self Checkout App</a>
-    <a href="#" class="tech">🤖 Discord Bot</a>
+    <a href="https://github.com/your-repo-1" target="_blank" class="tech">🛒 Self Checkout App</a>
+    <a href="https://github.com/your-repo-2" target="_blank" class="tech">🤖 Discord Bot</a>
   </div>
 </div>
 
 <!-- STACK -->
-<h2 style="color:#00ffcc; margin-top:40px;">⚙️ TECH STACK</h2>
+<div class="section">
+  <h2>⚙️ TECH STACK</h2>
 
-<div style="
-  display:flex;
-  flex-wrap:wrap;
-  margin-top:15px;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-">
-
-<span class="tech" style="padding:8px 14px; border:1px solid #00ffcc; border-radius:6px; display:flex; align-items:center; gap:8px;">
+  <div>
+    <!-- keep your full stack list unchanged -->
+    <!-- (same as your code, already good) -->
+    
+    <!-- Just trimmed repetition for clarity -->
+    <span class="tech" style="padding:8px 14px; border:1px solid #00ffcc; border-radius:6px; display:flex; align-items:center; gap:8px;">
   <img src="https://cdn.simpleicons.org/javascript/white" width="16" height="16"> JS
 </span>
 
@@ -267,19 +302,30 @@ Building scalable real-world systems
     <path d="M95.8 2.6 47.2 49.5 18.3 27.5 0 41.7l29.3 22L0 85.6l18.3 14.2 28.9-22L95.8 125l32.2-15.8V18.4z"/>
   </svg>VSCode
 </span>
-
+  </div>
 </div>
 
-<!-- CONTACT -->
+<!-- ABOUT / CONTACT -->
 <div class="section">
-  <h2>👤 CONTACT</h2>
+  <h2>👤 ABOUT ME</h2>
 
   <div class="contact">
-    <div>📧 your@email.com</div>
-    <div>💬 Angel_Nunez4</div>
+    <div class="card available">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" width="18">
+      your@email.com
+    </div>
+
+    <div class="card available">
+      <img src="https://cdn.simpleicons.org/discord/5865F2" width="18">
+      Angel_Nunez4
+    </div>
   </div>
 
-  <a href="#" class="btn">Visit Website</a>
+  <div style="margin-top:20px;">
+    <a href="https://yourwebsite.com" target="_blank" class="btn">
+      🌐 Visit Website
+    </a>
+  </div>
 </div>
 
 </div>
