@@ -28,12 +28,12 @@ body {
 
 .card {
   transition: all 0.3s ease;
-  width: 100%;
 }
 
 .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 0 25px rgba(0,255,204,0.35);
+  border-color: #00ffcc;
 }
 
 .available:hover {
@@ -49,13 +49,9 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: 40px;
   letter-spacing: 2px;
   color: #00ffcc;
-}
-
-.hero h2 {
-  font-size: clamp(16px, 3vw, 20px);
 }
 
 .hero p {
@@ -67,88 +63,40 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   margin-top: 40px;
 }
 
+/* IMAGE WRAPPER FIX */
 .profile-img {
-  flex: 1 1 300px;
   max-width: 400px;
+  width: 100%;
   position: relative;
 }
 
-.profile-img img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-/* FIXED OVERLAY */
-.overlay {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  padding: 8px 16px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #00ffcc;
-  background: black;
-  border: 2px solid #00ffcc;
-  border-radius: 6px;
-  box-shadow: 0 0 12px rgba(0,255,204,0.5);
-}
-
-/* PROFILE CARD */
-.profile-card {
-  flex: 1 1 300px;
-  max-width: 400px;
-  background: rgba(0,0,0,0.85);
-  border: 2px solid #00ffcc;
-  border-radius: 12px;
-  padding: 20px;
-}
-
-/* SECTION */
-.section {
-  margin-top: 60px;
-  text-align: center;
-}
-
-.section h2 {
-  color: #00ffcc;
-}
-
-/* TECH GRID */
-.tech-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
+/* TECH */
 .tech {
-  padding: 8px 12px;
+  padding: 8px 14px;
   border: 1px solid #00ffcc;
   border-radius: 6px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  margin: 10px;
   transition: all 0.25s ease;
-  font-size: 14px;
 }
 
 .tech:hover {
   background: #00ffcc;
   color: black;
   transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffcc;
 }
 
 .tech img {
-  width: 14px;
-  height: 14px;
   background: #000;
-  padding: 3px;
+  padding: 4px;
   border-radius: 4px;
 }
 
@@ -169,17 +117,27 @@ body {
   color: black;
 }
 
+/* SECTION */
+.section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.section h2 {
+  color: #00ffcc;
+}
+
 /* CONTACT */
 .contact {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
 
 .contact .card {
-  padding: 10px 16px;
+  padding: 12px 20px;
   border: 1px solid #00ffcc;
   border-radius: 8px;
   display: flex;
@@ -187,20 +145,19 @@ body {
   gap: 8px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .profile {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile-card {
-    width: 100%;
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 28px;
   }
 
   .tech {
-    font-size: 12px;
+    margin: 6px;
     padding: 6px 10px;
+  }
+
+  .card {
+    width: 100%;
   }
 }
 </style>
@@ -210,7 +167,7 @@ body {
 
 <div class="container">
 
-<!-- HERO -->
+<!-- WARNING -->
 <div class="hero">
   <h2>⚠️ WARNING: WORK IN PROGRESS ⚠️</h2>
   <h1>🎮 LOS DEV SANTOS</h1>
@@ -221,28 +178,54 @@ body {
 <!-- PROFILE -->
 <div class="profile">
 
+<!-- IMAGE -->
 <div class="profile-img">
-  <img src="https://live.staticflickr.com/65535/55204799843_97f1c3c015_b.jpg">
-  <div class="overlay">BUCKSMON</div>
+  <img src="https://live.staticflickr.com/65535/55204799843_97f1c3c015_b.jpg"
+       style="width:100%; border-radius:12px; display:block;">
+
+  <div class="card" style="
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    padding:8px 200px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#00ffcc;
+    background:black;
+    border:2px solid #00ffcc;
+    border-radius:6px;
+    box-shadow: 0 0 12px rgba(0,255,204,0.5);
+  ">
+    BUCKSMON
+  </div>
 </div>
 
-<div class="profile-card">
-  <h3 style="color:#00ffcc;">🧾 PLAYER PROFILE</h3>
+<!-- PROFILE CARD -->
+<div class="card" style="
+  max-width:400px;
+  background:rgba(0,0,0,0.85);
+  border:2px solid #00ffcc;
+  border-radius:12px;
+  padding:20px;
+">
 
-  <p><b>Class:</b> Full Stack Developer</p>
-  <p><b>Reputation:</b> Rising</p>
-  <p><b>Status:</b> <span style="color:#00ff00;">Online ●</span></p>
+<h3 style="color:#00ffcc;">🧾 PLAYER PROFILE</h3>
 
-  <ul>
-    <li>Efficient</li>
-    <li>Calculated</li>
-    <li>Unpredictable 😏</li>
-  </ul>
+<p><b>Class:</b> Full Stack Developer</p>
+<p><b>Reputation:</b> Rising</p>
+<p><b>Status:</b> <span style="color:#00ff00;">Online ●</span></p>
 
-  <p style="opacity:0.7;">
-    <b>Current Mission:</b><br>
-    Building scalable real-world systems
-  </p>
+<ul>
+  <li>Efficient</li>
+  <li>Calculated</li>
+  <li>Unpredictable 😏</li>
+</ul>
+
+<p style="opacity:0.7;">
+<b>Current Mission:</b><br>
+Building scalable real-world systems
+</p>
+
 </div>
 
 </div>
@@ -251,9 +234,9 @@ body {
 <div id="projects" class="section">
   <h2>🚀 PROJECTS</h2>
 
-  <div class="tech-grid">
-    <a href="#" class="tech">🛒 Self Checkout App</a>
-    <a href="#" class="tech">🤖 Discord Bot</a>
+  <div>
+    <a href="https://github.com/your-repo-1" target="_blank" class="tech">🛒 Self Checkout App</a>
+    <a href="https://github.com/your-repo-2" target="_blank" class="tech">🤖 Discord Bot</a>
   </div>
 </div>
 
@@ -324,16 +307,27 @@ body {
 
 </div>
 
-<!-- CONTACT -->
+<!-- ABOUT / CONTACT -->
 <div class="section">
   <h2>👤 ABOUT ME</h2>
 
   <div class="contact">
-    <div class="card available">📧 your@email.com</div>
-    <div class="card available">💬 Angel_Nunez4</div>
+    <div class="card available">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" width="18">
+      your@email.com
+    </div>
+
+    <div class="card available">
+      <img src="https://cdn.simpleicons.org/discord/5865F2" width="18">
+      Angel_Nunez4
+    </div>
   </div>
 
-  <a href="#" class="btn">🌐 Visit Website</a>
+  <div style="margin-top:20px;">
+    <a href="https://yourwebsite.com" target="_blank" class="btn">
+      🌐 Visit Website
+    </a>
+  </div>
 </div>
 
 </div>
