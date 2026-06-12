@@ -263,13 +263,16 @@
     }
 
     .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 1.5rem;
     }
 
     .card {
+      width: 350px;
+      max-width: 100%;
+
       background: var(--card);
       border: 1px solid var(--border);
       padding: 2rem;
@@ -322,7 +325,6 @@
     .tech img {
       width: 16px;
       height: 16px;
-      filter: invert(1);
       transition: 0.3s;
     }
 
@@ -843,17 +845,17 @@
           </span>
 
           <span class="tech">
-            <img src="https://cdn.simpleicons.org/javascript" width="16" height="16">
+            <img class="dark-invert" src="https://cdn.simpleicons.org/javascript" width="16" height="16">
             JavaScript
           </span>
 
           <span class="tech">
-            <img src="https://cdn.simpleicons.org/react" width="16" height="16">
+            <img class="dark-invert" src="https://cdn.simpleicons.org/react" width="16" height="16">
             React
           </span>
 
           <span class="tech">
-            <img src="https://cdn.simpleicons.org/react" width="16" height="16">
+            <img class="dark-invert" src="https://cdn.simpleicons.org/react" width="16" height="16">
             React Native
           </span>
 
@@ -870,7 +872,7 @@
         <div class="tech-stack">
 
           <span class="tech">
-            <img src="https://cdn.simpleicons.org/nodedotjs" width="16" height="16">
+            <img class="dark-invert" src="https://cdn.simpleicons.org/nodedotjs" width="16" height="16">
             Node.js
           </span>
 
@@ -880,7 +882,7 @@
           </span>
 
           <span class="tech">
-            <img src="https://cdn.simpleicons.org/mongodb" width="16" height="16">
+            <img class="dark-invert" src="https://cdn.simpleicons.org/mongodb" width="16" height="16">
             MongoDB
           </span>
 
@@ -902,7 +904,7 @@
           </span>
 
           <span class="tech">
-            <img src="https://cdn.simpleicons.org/figma" width="16" height="16">
+            <img class="dark-invert" src="https://cdn.simpleicons.org/figma" width="16" height="16">
             Figma
           </span>
 
