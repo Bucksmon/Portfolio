@@ -1139,60 +1139,55 @@
             projectsDiv.innerHTML =
               grouped[category]
                 .map(project => `
-      <a
-  class="project-item"
-  href="${project.url || project.github}"
-  target="_blank"
->
+      <div class="project-item">
+
         <iframe
-  class="project-video"
-  src="${getEmbedUrl(project.video)}"
-  title="${project.title}"
-  loading="lazy"
-  allowfullscreen>
-</iframe>
+          class="project-video"
+          src="${getEmbedUrl(project.video)}"
+          title="${project.title}"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
 
         <div class="project-footer">
 
-  <div class="project-title">
-    ${project.title}
-  </div>
+          <div class="project-title">
+            ${project.title}
+          </div>
 
-  <div class="project-icons">
+          <div class="project-icons">
 
-```
-${
-                  project.url ? `
-  <a
-    href="${project.url}"
-    target="_blank"
-    class="project-icon"
-    onclick="event.stopPropagation();"
-  >
-    <i class="fa-solid fa-globe"></i>
-  </a>
-` : ""
-                }
+            ${project.url
+                    ? `
+                  <a
+                    href="${project.url}"
+                    target="_blank"
+                    class="project-icon"
+                  >
+                    <i class="fa-solid fa-globe"></i>
+                  </a>
+                `
+                    : ""
+                  }
 
-${
-                  project.github ? `
-  <a
-    href="${project.github}"
-    target="_blank"
-    class="project-icon"
-    onclick="event.stopPropagation();"
-  >
-    <i class="fa-brands fa-github"></i>
-  </a>
-` : ""
-                }
-                  ```
+            ${project.github
+                    ? `
+                  <a
+                    href="${project.github}"
+                    target="_blank"
+                    class="project-icon"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                `
+                    : ""
+                  }
 
-  </div>
+          </div>
 
-</div>
+        </div>
 
-      </a>
+      </div>
     `)
                 .join("");
             card.addEventListener(
