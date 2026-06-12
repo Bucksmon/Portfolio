@@ -872,7 +872,7 @@
         <div class="tech-stack">
 
           <span class="tech">
-            <img class="dark-invert" src="https://cdn.simpleicons.org/nodedotjs" width="16" height="16">
+            <img class="dark-invert" src="https://cdn.simpleicons.org/nodedotjs/ffffff" width="16" height="16">
             Node.js
           </span>
 
@@ -1076,10 +1076,10 @@
               grouped[category]
                 .map(project => `
       <a
-        class="project-item"
-        href="${project.url}"
-        target="_blank"
-      >
+  class="project-item"
+  href="${project.url || project.github}"
+  target="_blank"
+>
         <iframe
   class="project-video"
   src="${getEmbedUrl(project.video)}"
