@@ -728,7 +728,60 @@
     body.light .card,
     body.light .project-item,
     body.light .social-links a,
-    body.light .project-category {
+    body.light .project-item {
+      border: 1px solid #000;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 1rem 1.25rem;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+
+      text-align: left;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .project-icons {
+      display: flex;
+      gap: .5rem;
+
+      flex-shrink: 0;
+    }
+
+    .project-icon {
+      width: 34px;
+      height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 8px;
+
+      color: var(--text);
+      text-decoration: none;
+
+      border: 1px solid var(--border);
+
+      transition: .2s;
+    }
+
+    .project-icon:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    body.light .project-icon {
       border: 1px solid #000;
     }
   </style>
@@ -1099,9 +1152,46 @@
   allowfullscreen>
 </iframe>
 
-        <div class="project-name">
-          ${project.title}
-        </div>
+        <div class="project-footer">
+
+  <div class="project-title">
+    ${project.title}
+  </div>
+
+  <div class="project-icons">
+
+```
+${
+                  project.url ? `
+  <a
+    href="${project.url}"
+    target="_blank"
+    class="project-icon"
+    onclick="event.stopPropagation();"
+  >
+    <i class="fa-solid fa-globe"></i>
+  </a>
+` : ""
+                }
+
+${
+                  project.github ? `
+  <a
+    href="${project.github}"
+    target="_blank"
+    class="project-icon"
+    onclick="event.stopPropagation();"
+  >
+    <i class="fa-brands fa-github"></i>
+  </a>
+` : ""
+                }
+                  ```
+
+  </div>
+
+</div>
+
       </a>
     `)
                 .join("");
