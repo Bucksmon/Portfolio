@@ -14,6 +14,22 @@
     "github": "https://github.com/Bucksmon/GTAW-Image-Manager-Web"
   },
   {
+    "title": "QR Generator",
+    "category": "AHK Scripts",
+    "github": "https://github.com/Bucksmon/AHK-projects./tree/main/QR%20Generator"
+  },
+  {
+    "title": "Coordinate Finger",
+    "category": "AHK Scripts",
+    "github": "https://github.com/Bucksmon/AHK-projects./blob/main/Coordinate%20Finder/Script.ahk"
+  },
+  {
+    "title": "GTAW Screenshot Assistant",
+    "category": "AHK Scripts",
+    "github": "https://github.com/Bucksmon/AHK-projects./tree/main/Screenshot%20Taker"
+  },
+  
+  {
     "title": "Input_Field#05",
     "category": "Youtube",
     "video": "https://www.youtube.com/shorts/2WYbWY2GzW0",
