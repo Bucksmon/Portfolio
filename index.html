@@ -1137,13 +1137,15 @@
                 .map(project => `
       <div class="project-item">
 
+        ${project.video ? `
         <iframe
-          class="project-video"
-          src="${getEmbedUrl(project.video)}"
-          title="${project.title}"
-          loading="lazy"
-          allowfullscreen>
+            class="project-video"
+            src="${getEmbedUrl(project.video)}"
+            title="${project.title}"
+            loading="lazy"
+            allowfullscreen>
         </iframe>
+        ` : ""}
 
         <div class="project-footer">
 
